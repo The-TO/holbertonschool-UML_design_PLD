@@ -6,6 +6,7 @@ classDiagram
     Order "1"-->"1" Resto
     Resto "1"-->"1" Livreur
     Livreur "1"-->"1" User
+    Item --> Resto
     
       class User {
         -id : int 
@@ -20,7 +21,7 @@ classDiagram
         
       }
       class Item {
-        +id
+        +id : 
         +name
         +description
         +price
@@ -31,8 +32,9 @@ classDiagram
         +stock_amount()
       }
       class Menu {
-        +list
-        +
+        +item_list
+        +id
+        +name
         +display_list()
         
       }
@@ -40,6 +42,7 @@ classDiagram
         +adress
         +name
         +phone
+        +id
         
         -order_reception()
         -order_execution()
@@ -58,6 +61,8 @@ classDiagram
       class Order{
         +command_status
         +command_size
+        +id
+        +name
 
         +restaurant_instructions()
         +remove item()
