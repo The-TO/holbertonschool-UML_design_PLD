@@ -1,0 +1,22 @@
+sequenceDiagram
+  actor User
+  participant Menu
+  participant Item
+  participant Order
+  participant Resto
+  participant Livreur
+
+
+
+User ->> Menu: regarde
+Menu ->> Item :  Selection
+Item ->> Order : ajout des item 
+Order -->> User : Assignation
+User ->> Order : Selection d'un item
+Order -->> User : Remove
+
+Order ->> Resto : Preparation
+Resto ->> User: Confirmation d'expedition
+Resto->> Livreur : Donne la commande
+Livreur -->> User : Livre la commande
+Livreur ->> Resto : Commande Livré
