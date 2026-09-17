@@ -28,7 +28,6 @@ classDiagram
         -quantity
         +availability
 
-        -stock_gestion()
         +stock_amount()
       }
       class Menu {
@@ -36,6 +35,8 @@ classDiagram
         +id
         +name
         +display_list()
+
+         -stock_gestion()
         
       }
       class Resto {
