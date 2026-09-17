@@ -1,0 +1,66 @@
+classDiagram
+    User --> Menu
+    User o-- Order
+    Menu "1"--"0..*" Item
+    Item "0..*"--*"1"  Order
+    Order "1"-->"1" Resto
+    Resto "1"-->"1" Livreur
+    Livreur "1"-->"1" User
+    
+      class User {
+        -id : int 
+        -name : str
+        -mail : str
+        -phone : str
+        -address : str
+
+        
+        +check menu()
+        +order_request()
+        
+      }
+      class Item {
+        +id
+        +name
+        +description
+        +price
+        -quantity
+        +availability
+
+        -stock_gestion()
+        +stock_amount()
+      }
+      class Menu {
+        +list
+        +
+        +display_list()
+        
+      }
+      class Resto {
+        +adress
+        +name
+        +phone
+        
+        -order_reception()
+        -order_execution()
+        -order_delivery()
+       
+      }
+      class Livreur{
+        + GPS
+        + Name
+        +id
+        +vehicle
+
+        -order_received()
+        -order_delivered()
+      }
+      class Order{
+        +command_status
+        +command_size
+
+        +restaurant_instructions()
+        +remove item()
+        +add item()
+        +edit quantity
+      }
